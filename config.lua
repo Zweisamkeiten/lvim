@@ -27,13 +27,13 @@ lvim.keys.insert_mode["<C-f>"] = "<Right>"
 lvim.keys.insert_mode["<C-b>"] = "<Left>"
 
 -- Change cmp navigation to use n and p for navigation and j and k for doc page scroll
-local _, cmp = pcall(require, "cmp")
-lvim.builtin.cmp.mapping= {
-      ["<C-n>"] = cmp.mapping.select_prev_item(),
-      ["<C-p>"] = cmp.mapping.select_next_item(),
-      ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-j>"] = cmp.mapping.scroll_docs(4),
-}
+-- local _, cmp = pcall(require, "cmp")
+-- lvim.builtin.cmp.mapping= {
+--       ["<C-p>"] = cmp.mapping.select_prev_item(),
+--       ["<C-n>"] = cmp.mapping.select_next_item(),
+--       ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+--       ["<C-j>"] = cmp.mapping.scroll_docs(4),
+-- }
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -151,11 +151,26 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {"folke/tokyonight.nvim"},
-    -- {
-    --   "folke/trouble.nvim",
-    --   cmd = "TroubleToggle",
-    -- },
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      local _time = os.date("*t")
+      if _time.hour < 8 then
+        vim.g.tokyonight_style = "night"
+      elseif _time.hour >= 8 and _time.hour < 16 then
+        vim.g.tokyonight_style = "night"
+      else
+        vim.g.tokyonight_style = "storm"
+      end
+      vim.cmd([[
+    colorscheme tokyonight
+      ]])
+    end,
+  },
+  -- {
+  --   "folke/trouble.nvim",
+  --   cmd = "TroubleToggle",
+  -- },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

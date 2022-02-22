@@ -26,6 +26,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- own insert_mode keymapping
 lvim.keys.insert_mode["<C-f>"] = "<Right>"
 lvim.keys.insert_mode["<C-b>"] = "<Left>"
+lvim.keys.insert_mode["<C-e>"] = "<ESC>A"
+lvim.keys.insert_mode["<C-a>"] = "<ESC>I"
 
 -- Change cmp navigation to use n and p for navigation and j and k for doc page scroll
 -- local _, cmp = pcall(require, "cmp")

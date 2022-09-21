@@ -229,3 +229,4 @@ lvim.builtin.terminal.execs = {
   { "lazygit", "<leader>gg", "LazyGit", "float" },
   { "gdb", "<leader>tg", "GNU Debugger", "float" },
 }
+vim.opt.wrap = true

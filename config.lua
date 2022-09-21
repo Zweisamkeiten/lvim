@@ -229,4 +229,7 @@ lvim.builtin.terminal.execs = {
   { "lazygit", "<leader>gg", "LazyGit", "float" },
   { "gdb", "<leader>tg", "GNU Debugger", "float" },
 }
+
 vim.opt.wrap = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

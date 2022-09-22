@@ -213,6 +213,7 @@ lvim.plugins = {
     "gcmt/wildfire.vim",
     config = function()
       vim.keymap.set('n', '+', '<Plug>(wildfire-fuel)')
+      vim.keymap.set('v', '+', '<Plug>(wildfire-fuel)')
       vim.keymap.set('v', '-', '<Plug>(wildfire-water)')
       -- vim.cmd([[
       -- map + <Plug>(wildfire-fuel)
@@ -220,6 +221,14 @@ lvim.plugins = {
       -- ]])
     end
   },
+  {
+    "tpope/vim-surround",
+    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
+    -- setup = function()
+    --  vim.o.timeoutlen = 500
+    -- end
+  },
+
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

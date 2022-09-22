@@ -209,6 +209,9 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    "gcmt/wildfire.vim"
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

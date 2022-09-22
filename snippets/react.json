@@ -1,0 +1,7 @@
+{
+  "myreactFunctionComponentWithCustomName": {
+    "prefix": "mrfc",
+    "body": "\nconst ${1:functionname} = (${2:argument}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n",
+    "description": "Creates a React function component with custom name"
+  }
+}

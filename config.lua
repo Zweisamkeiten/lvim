@@ -210,7 +210,15 @@ lvim.plugins = {
     end,
   },
   {
-    "gcmt/wildfire.vim"
+    "gcmt/wildfire.vim",
+    config = function()
+      vim.keymap.set('n', '+', '<Plug>(wildfire-fuel)')
+      vim.keymap.set('v', '-', '<Plug>(wildfire-water)')
+      -- vim.cmd([[
+      -- map + <Plug>(wildfire-fuel)
+      -- map - <Plug>(wildfire-water)
+      -- ]])
+    end
   },
 }
 
@@ -234,6 +242,8 @@ lvim.builtin.terminal.execs = {
 }
 
 vim.opt.wrap = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 require('luasnip').filetype_extend("javascriptreact", { "html" })
+-- vim.keymap.set('n', '+', '<Plug>(wildfire-fuel)')
+-- vim.keymap.set('v', '-', '<Plug>(wildfire-water)')

@@ -1,7 +1,16 @@
 {
   "myreactFunctionComponentWithCustomName": {
     "prefix": "mrfc",
-    "body": "\nconst ${1:functionname} = (${2:argument}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}\n",
+    "body": [
+      "\nconst ${1:functionname} = (${2:argument}) => {\n\treturn (\n\t\t<div>\n\t\t\t$3\n\t\t</div>\n\t)\n};\n"
+    ],
     "description": "Creates a React function component with custom name"
+  },
+  "mybutton": {
+    "prefix": "mbutton",
+    "body": [
+      "<button onClick={$1}>$2</button>$3"
+    ],
+    "description": "JSX"
   }
 }

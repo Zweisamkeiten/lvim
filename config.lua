@@ -26,7 +26,7 @@ lvim.keys.normal_mode = {
   ["<S-h>"] = ":BufferLineCyclePrev<CR>",
 }
 lvim.keys.term_mode = {
-  ["<ESC>"] = "<C-\\><C-N>",
+  -- ["<ESC>"] = "<C-\\><C-N>",
   ["<C-h>"] = "<BACKSPACE>",
 }
 -- unmap a default keymapping

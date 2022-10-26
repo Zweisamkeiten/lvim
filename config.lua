@@ -27,7 +27,15 @@ lvim.keys.normal_mode = {
 }
 lvim.keys.term_mode = {
   -- ["<ESC>"] = "<C-\\><C-N>",
+  ["<C-o>"] = "<C-\\><C-N>",
   ["<C-h>"] = "<BACKSPACE>",
+}
+
+lvim.builtin.which_key.mappings["l"]["f"] = {
+  function()
+    require("lvim.lsp.utils").format { timeout_ms = 2000 }
+  end,
+  "Format",
 }
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
@@ -69,7 +77,6 @@ lvim.builtin.which_key.mappings["t"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -110,7 +117,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- ---@usage disable automatic installation of servers
--- lvim.lsp.automatic_servers_installation = false
+lvim.lsp.installer.automatic_servers_installation = false
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -166,6 +173,10 @@ linters.setup {
   --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
   --   filetypes = { "javascript", "python" },
   -- },
+  {
+    command = "eslint",
+    filetypes = { "javascript", "javascriptreact" }
+  }
 }
 
 -- Additional Plugins
@@ -257,3 +268,4 @@ vim.opt.wrap = true
 require('luasnip').filetype_extend("javascriptreact", { "html" })
 -- vim.keymap.set('n', '+', '<Plug>(wildfire-fuel)')
 -- vim.keymap.set('v', '-', '<Plug>(wildfire-water)')
+local functions = require("user.functions")

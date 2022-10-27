@@ -9,9 +9,10 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
+vim.opt.timeoutlen = 200
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "tokyonight"
 lvim.transparent_window = true
 vim.opt.relativenumber = true
 -- to disable icons and use a minimalist setup, uncomment the following

@@ -12,6 +12,7 @@ an executable
 vim.opt.timeoutlen = 200
 lvim.log.level = "warn"
 lvim.format_on_save = true
+lvim.builtin.which_key.setup.plugins.marks = true
 -- lvim.colorscheme = "tokyonight"
 lvim.transparent_window = true
 vim.opt.relativenumber = true

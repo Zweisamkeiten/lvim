@@ -183,21 +183,6 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { "folke/tokyonight.nvim",
-    config = function()
-      local _time = os.date("*t")
-      if _time.hour < 8 then
-        vim.g.tokyonight_style = "night"
-      elseif _time.hour >= 8 and _time.hour < 16 then
-        vim.g.tokyonight_style = "night"
-      else
-        vim.g.tokyonight_style = "storm"
-      end
-      vim.cmd([[
-    colorscheme tokyonight
-      ]])
-    end,
-  },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",

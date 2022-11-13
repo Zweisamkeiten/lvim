@@ -1,0 +1,7 @@
+{
+    "module block": {
+    "prefix": "mmod",
+    "body": ["module ysyx_22050710_${1:FILENAME} (${2});", "\n\t${0}", "\nendmodule"],
+    "description": "Module Block"
+  }
+}

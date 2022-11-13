@@ -16,6 +16,12 @@
           "javascriptreact"
         ],
         "path": "./react.json"
+      },
+      {
+        "language": [
+          "verilog"
+        ],
+        "path": "./verilog.json"
       }
     ]
   }

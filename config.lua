@@ -13,7 +13,7 @@ vim.opt.timeoutlen = 200
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.builtin.which_key.setup.plugins.marks = true
--- lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-moon"
 lvim.transparent_window = true
 vim.opt.relativenumber = true
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -119,7 +119,10 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- }
 
 -- ---@usage disable automatic installation of servers
-lvim.lsp.installer.automatic_servers_installation = false
+lvim.lsp.installer.setup.automatic_installation = false
+-- lvim.lsp.installer.setup.automatic_installation.exclude = {"asm_lsp"}
+-- lvim.lsp.installer.setup.ensure_installed = {"pyright", "jsonls", "yamlls", "bashls"}
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "asm_lsp" })
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
@@ -308,3 +311,17 @@ local functions = require("user.functions")
 --   },
 --   cache_enabled = 1,
 -- }
+--
+lvim.builtin.which_key.setup.plugins.presets.operators = true
+lvim.builtin.which_key.setup.plugins.presets.motion = true
+lvim.builtin.which_key.setup.plugins.presets.text_objects = true
+-- which-key show the bindings for folds
+lvim.builtin.which_key.setup.plugins.presets.z = true
+lvim.builtin.which_key.setup.plugins.presets.g = true
+
+-- all fold open
+vim.opt.foldenable = false
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+lvim.builtin.gitsigns.active = true;

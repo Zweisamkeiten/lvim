@@ -1,7 +1,12 @@
 {
     "module block": {
     "prefix": "mmod",
-    "body": ["module ysyx_22050710_${1:FILENAME} (${2});", "\n\t${0}", "\nendmodule"],
+    "body": ["// ysyx_22050710\nmodule ysyx_22050710_${1:FILENAME} #(\n\tparameter ${2}\n) (\n\t${3}\n);", "\n\t${0}", "\nendmodule"],
     "description": "Module Block"
+  },
+    "instance block": {
+    "prefix": "ins",
+    "body": ["ysyx_22050710_${1:INSTANCE} #(\n\t${2}\n) u_${1:INSTANCE} (\n\t${3}\n);"],
+    "description": "instance Block"
   }
 }
